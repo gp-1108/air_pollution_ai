@@ -1,0 +1,6 @@
+env/
+env/lib
+env/lib64
+env
+.env
+__pycache__
