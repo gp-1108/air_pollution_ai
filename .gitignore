@@ -4,3 +4,4 @@ env/lib64
 env
 .env
 __pycache__
+key.json
