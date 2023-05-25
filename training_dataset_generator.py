@@ -16,4 +16,10 @@ df_air = df_air.dropna()
 # Drop the rows with fips that are not in the mortality dataset
 df_air = df_air[df_air['fips'].isin(df_mortality['fips'])]
 
+
 final_df = df_air.merge(df_mortality, on=['fips', 'year'])
+
+print(final_df.shape)
+
+# Save it to csv
+final_df.to_csv('training_data.csv', index=False)
