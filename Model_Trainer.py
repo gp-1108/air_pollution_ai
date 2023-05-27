@@ -11,8 +11,7 @@ def train_model(model, optimizer, loss_module, learning_rate=0.001, num_epochs=5
     torch.cuda.manual_seed(42)
     torch.cuda.manual_seed_all(42)
   print("Current device is {}".format(device))
-  # causes_list = ["508","509","510","511","512","513","514","515","516","520","-1"]
-  causes_list = ["-1"]
+  causes_list = ["508","509","510","511","512","513","514","515","516","520","-1"]
   """
   cause_id columns meaning:
     "508","Chronic respiratory diseases"
