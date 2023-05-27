@@ -17,6 +17,6 @@ train_model(
   optimizer=torch.optim.SGD,
   loss_module=nn.MSELoss(),
   learning_rate=0.0001,
-  num_epochs=50,
+  num_epochs=500,
   model_name="Linear_Classifier" # It must correspond to the path ./models/{model_name} already existing
 )
