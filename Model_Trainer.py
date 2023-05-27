@@ -3,6 +3,7 @@ import torch
 from torch.utils import data
 import torch.nn as nn
 import matplotlib.pyplot as plt
+import os
 
 def train_model(model, optimizer, loss_module, learning_rate=0.001, num_epochs=500, model_name="model"):
   torch.manual_seed(42) # Setting the seed
@@ -89,10 +90,17 @@ def train_model(model, optimizer, loss_module, learning_rate=0.001, num_epochs=5
     plt.ylabel('Loss')
     plt.title(f"Loss for cause_id {cause_id} with {model_name}")
     plt.legend()
+
+    # Checking if the directory exists
+    if not os.path.exists(f"./results/{model_name}"):
+      os.makedirs(f"./results/{model_name}")
+
+    # Saving the plot
     plt.savefig(f'./results/{model_name}/cause_id_{cause_id}.png')
 
     # Saving the model
     torch.save(current_model.state_dict(), f"./results/{model_name}/cause_id_{cause_id}.tar")
+
 
     # Saving the losses
     with open(f"./results/{model_name}/cause_id_{cause_id}_losses.txt", "w") as f:
