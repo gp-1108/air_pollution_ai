@@ -16,9 +16,9 @@ class DecisionTree:
         self.max_depth = max_depth
 
     def _gini(self, labels):
-        _, counts = np.unique(labels, return_counts=True)
+        _, counts = torch.unique(labels, return_counts=True)
         probabilities = counts / len(labels)
-        gini = 1 - np.sum(probabilities ** 2)
+        gini = 1 - torch.sum(probabilities ** 2)
         return gini
 
     def _split_data(self, X, y, feature_index, threshold):
@@ -34,7 +34,7 @@ class DecisionTree:
         best_threshold = None
 
         for feature_index in range(X.shape[1]):
-            thresholds = np.unique(X[:, feature_index])
+            thresholds = torch.unique(X[:, feature_index])
             for threshold in thresholds:
                 X_left, y_left, X_right, y_right = self._split_data(X, y, feature_index, threshold)
 
@@ -52,8 +52,8 @@ class DecisionTree:
 
     def _build_tree(self, X, y, depth):
         if depth == self.max_depth or len(np.unique(y)) == 1:
-            _, class_counts = np.unique(y, return_counts=True)
-            value = np.argmax(class_counts)
+            _, class_counts = torch.unique(y, return_counts=True)
+            value = torch.argmax(class_counts)
             return Node(value=value)
 
         feature_index, threshold = self._best_split(X, y)
