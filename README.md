@@ -1,4 +1,6 @@
 ### Correlation between air quality and respiratory diseases
+
+## Summary
 The prediction of mortality rates for respiratory diseases
 based on air pollutant levels is a critical task in understanding and mitigating the impacts of environmental factors on
 public health. In this paper, we describe a machine learning model that uses data on air pollutants to predict respiratory disease mortality rates. A dataset containing historical
@@ -10,3 +12,8 @@ In order to improve the accuracy and usefulness of mortality
 rate prediction models for respiratory disorders, we explore
 the consequences of our results and provide suggestions for
 future research areas.
+
+## Team
+- Pietro Girotto (https://github.com/gp-1108)
+- Enrico D'Alberton (https://github.com/enricopro)
+- Arjun Jassal (https://github.com/Faldrus)
